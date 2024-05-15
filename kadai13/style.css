@@ -1,0 +1,485 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: 'MS PMincho', sans-serif;
+    font-size: 1.6rem;
+    color: #000000;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ＝＝＝＝ヘッダー＝＝＝＝*/
+header {
+    height: 150px;
+    display: flex;
+    align-items: center;
+}
+
+h1 {
+    padding-left: 20px;
+    margin-left: 193px;
+    font-size: 5.5rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.menuButton {
+    display: block;
+    width: 150px;
+    height: 150px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transition: .3s;
+    z-index: 3;
+    margin-right: 53.5px;
+}
+
+.menuButton div {
+    width: 60%;
+    height: 2px;
+    background: #000000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s;
+}
+
+.menuButton div:nth-of-type(1) {
+    transform: translate(-50%, -50px);
+}
+
+.menuButton div:nth-of-type(3) {
+    transform: translate(-50%, 50px);
+}
+
+.menuButton.active div:nth-of-type(1) {
+    transform: rotate(45deg) translate(-50%, 0px);
+    width: 70%;
+    transform-origin: 0 50%;
+}
+
+.menuButton.active div:nth-of-type(2) {
+    opacity: 0;
+}
+
+.menuButton.active div:nth-of-type(3) {
+    transform: rotate(-45deg) translate(-50%, 0px);
+    width: 70%;
+    transform-origin: 0 50%;
+}
+
+.headerNav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    font-size: 3rem;
+    background: #fff;
+    max-height: 100vh;
+    padding: 150px 0 100px;
+    transform: translateX(100%);
+    transition: .3s;
+    overflow: auto;
+}
+
+.headerNav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.headerNav ul a {
+    color: #000;
+}
+
+.headerNav ul li a:hover {
+    text-decoration: underline double;
+    color: gray;
+}
+
+.headerNav ul li {
+    padding-top: 12px;
+    margin: 0 20px;
+}
+
+.headerNav.active {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+}
+
+.mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: #000;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+}
+
+.mask.active {
+    opacity: 0.7;
+    visibility: visible;
+}
+video {
+    width: 100%;
+    height: 100%;
+}
+
+
+/*＝＝＝＝＝＝ 共通　＝＝＝＝＝＝*/
+h2 {
+    text-align: center;
+    font-size: 5.5rem;
+    margin: 86px 0 77px;
+}
+
+.innerWrap {
+    width: 1664px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+/* ＝＝＝＝＝＝スライド＝＝＝＝＝＝ */
+main h2 {
+    padding-bottom: 7px;
+}
+#picAria h2 {
+    margin: 133px 0 123px;
+}
+#picAria {
+    width: 100%;
+    margin: 0 auto;
+}
+#slide {
+    position: relative;
+    overflow: hidden;
+    height: 512px;
+}
+#slide ul {
+    position: absolute;
+    width: 3010px;
+}
+#slide li {
+    float: left;
+    width: auto;
+    list-style-type: none;
+}
+#slide ul > * + * {
+    margin-left: 50px;
+}
+
+/* ふわっと */
+article h2 {
+    margin: 230px 0 84px;
+}
+.flexBox{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 83px;
+}
+.shoes li {
+    list-style-type: none;
+    border: 1px solid #707070;
+    width: 500px;
+    height: 444px;
+}
+.shoes {
+    font-size: 2.5rem;
+}
+.shoes img {
+    margin-bottom: 21px;
+    max-width: 100%;
+    height: auto;
+    border-bottom: 1px solid #707070;
+}
+.shoes h3 {
+    margin: 0 0 36px 22px;
+}
+.shoes .textBox {
+    margin-left: 67px;
+    line-height: 1.5;
+    letter-spacing: .13em;
+    margin-bottom: 10px;
+}
+.shoes .text {
+    text-align: right;
+    margin-right: 65px;
+}
+
+/* 仕組み */
+.fadein {
+    opacity: 0;
+    transform: translate(0,80px);
+    transition: all 800ms;
+}
+.fadein.scrollin {
+    opacity: 1;
+    transform: translate(0,0);
+}
+.contAll {
+    margin-top: 265px;
+    padding-top: 86px;
+    background-color: #000000;
+    width: 100%;
+}
+.contAll h2 {
+    color: #FFFFFF;
+}
+form {
+    width: 1511px;
+    margin: 0 auto;
+}
+
+.formFlex {
+    display: flex;
+    flex-wrap: wrap; 
+}
+
+.formFlex p {
+    margin-bottom: 12px;
+    font-size: 3rem;
+    color: #FFFFFF;
+}
+
+.formFlex > p {
+    width: 59.5%;
+    line-height: 1.5;
+    letter-spacing: .16em;
+}
+input {
+    background: #FFFFFF;
+    width: 611px;
+    height: 62px;
+}
+
+textarea {
+    background: #FFFFFF;
+    width: 611px;
+    height: 89px;
+}
+
+.submitBtn {
+    text-align: center;
+    font-size: 4rem;
+    color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+    padding: 31px 91px 25px 104px;
+   margin: 35px 301px 168px auto;
+}
+#footer {
+position: fixed; 
+bottom: 0px; 
+z-index: 3;
+box-sizing: border-box;
+width: 100%;
+margin-bottom: 28px;
+    height: 68px;
+    text-align: center;
+
+}
+
+footer p {
+    font-size: 4rem;
+    color: #FFFFFF;
+}
+
+/* パソコン */
+@media screen and (min-width:1025px) and (max-width:1480px){
+    /* 共通 */
+    html{
+        font-size: 7px;
+    } 
+    img {
+        height: auto;
+    }
+    /* ヘッダー */
+    h1 {
+        margin-left: 0;
+    }
+    
+    
+    /* FEATURE */
+    .innerWrap {
+        width: 100%;
+    }
+    .flexBox{
+       flex-direction: column;
+       align-items: center;
+        margin-bottom: 0;
+    }
+    .shoes li {
+        margin-bottom: 86px;
+    }
+    
+    /* コンタクト */
+    form {
+        width: 100%;
+    }
+    .formFlex {
+        padding-left: 130px;
+        width: 100%;
+        white-space:wrap
+    }
+    input {
+        margin-bottom: 50px;
+    }
+    textarea {
+        margin-bottom: 50px;
+    } 
+}
+/* タブレット */
+@media screen and (min-width:481px) and (max-width:1024px){
+     /* 共通 */
+     html{
+        font-size: 7px;
+    } 
+    img {
+        height: auto;
+    }
+    /* ヘッダー */
+    h1 {
+        margin-left: 0;
+    }
+    .menuButton {
+        display: block;
+        width: 100px;
+        height: 100px;
+        position: fixed;
+        top: auto;
+        right: 0;
+        transition: .3s;
+        z-index: 3;
+        margin-right: 20px;
+    }
+    
+    
+    /* FEATURE */
+    .innerWrap {
+        width: 100%;
+    }
+    .flexBox{
+       flex-direction: column;
+       align-items: center;
+        margin-bottom: 0;
+    }
+    .shoes li {
+        margin-bottom: 86px;
+    }
+    
+    /* コンタクト */
+    form {
+        width: 100%;
+    }
+    .formFlex {
+        padding-left: 100px;
+        width: 100%;
+        white-space:wrap
+    }
+    .formFlex > p {
+        width: 100%;
+    }   
+    input {
+        margin-bottom: 50px;
+        width: 130%;
+    }
+    textarea {
+        margin-bottom: 50px;
+       width: 130%;
+
+    } 
+   
+}
+/* 携帯 */
+@media screen and (max-width:480px) {
+      /* 共通 */
+      html{
+        font-size: 6.5px;
+    } 
+    img {
+        height: auto;
+    }
+    /* ヘッダー */
+    h1 {
+        margin-left: 0;
+    }
+    .menuButton {
+        display: block;
+        width: 100px;
+        height: 100px;
+        position: fixed;
+        top: auto;
+        right: 0;
+        transition: .3s;
+        z-index: 3;
+        margin-right: 20px;
+    }
+    
+    
+    /* FEATURE */
+    .innerWrap {
+        width: 100%;
+    }
+    .flexBox{
+       flex-direction: column;
+       align-items: center;
+        margin-bottom: 0;
+    }
+    .shoes li {
+        margin-bottom: 86px;
+    }
+    .shoes li {
+        max-width: 100%;
+        height: 380px;
+    }
+    .shoes .textBox {
+        letter-spacing: .12em;
+        margin-left: 30px;
+    }
+    
+    
+    /* コンタクト */
+    form {
+        width: 100%;
+    }
+    .formFlex {
+        padding-left: 20px;
+        width: 100%;
+        white-space:wrap
+    }
+    .formFlex > p {
+        width: 100%;
+        letter-spacing: .12em;
+    }   
+    input {
+        margin-bottom: 50px;
+        width: 120%;
+    }
+    textarea {
+        margin-bottom: 50px;
+       width: 130%;
+
+    } 
+}
